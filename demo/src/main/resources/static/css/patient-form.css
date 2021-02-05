@@ -1,0 +1,17 @@
+body {
+    background: url(../img/fondo.jpg) no-repeat center center fixed;
+    size: cover;
+}
+
+.main-section {
+    margin:0 auto;
+    margin-top:5%;
+}
+
+.tblPacientes {
+    font-size: 12px;
+}
+
+.dependiente {
+	margin-top: 20px;
+}

@@ -1,0 +1,30 @@
+<div class="table-responsive tblPacientes">
+    <table id="userList" class="table table-bordered table-hover table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Rut</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Comuna</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="paciente: ${pacienteList}">
+                <td th:text="${paciente.rut}"></td>
+                <td th:text="${paciente.nombres}"></td>
+                <td th:text="${paciente.apellidos}"></td>
+                <td th:text="${paciente.fechaNacimiento}"></td>
+                <td th:text="${paciente.edad}"></td>
+                <td th:text="${paciente.direccion}"></td>
+                <td th:text="${paciente.comuna.comuna}"></td>
+                <td>
+                    <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

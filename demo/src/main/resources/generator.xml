@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="MySqlContext" targetRuntime="MyBatis3Simple"
+		defaultModelType="flat">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;allowPublicKeyRetrieval=true"
+			userId="root" password="grgd89">
+			<property name="nullCatalogMeansCurrent" value="true" />
+			<property name="serverTimezone" value="UTC" />
+		</jdbcConnection>
+
+		<javaModelGenerator
+			targetPackage="com.max.spring.data.model" targetProject="demo/src/main/java" />
+
+		<sqlMapGenerator targetPackage="sql" targetProject="demo/src/main/resources" />
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.max.spring.data.mapper" targetProject="demo/src/main/java" />
+
+		<table tableName="%" />
+
+	</context>
+</generatorConfiguration>

@@ -1,0 +1,57 @@
+
+<form class="form" role="form" autocomplete="off" th:object="${paciente}"  th:action="@{/patientForm}" method="post">
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Nombres</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${paciente.nombres}">
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${paciente.apellidos}">
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Fecha	de Nacimiento</label>
+		<div class="col-lg-9" >
+			<input class="form-control" type="text" id="datetimepicker" th:field="${paciente.fecNac}">
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Direccion</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${paciente.direccion}">
+		</div>
+	</div>
+		<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${paciente.telefono}">
+		</div>
+	</div>
+	<div class="form-group row">
+		<label th:text="Region" class="col-lg-3 col-form-label form-control-label"></label>
+		<div class="col-lg-9">
+			<select class="form-control" id="region">
+				<option th:each="region :${regiones}" th:value="${region.idRegion}" th:text="${region.region}">
+				</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label th:text="Comuna" class="col-lg-3 col-form-label form-control-label"></label>
+		<div class="col-lg-9">
+			<select class="form-control" id="comuna" th:field="${paciente.comuna}">
+<!-- 				<option th:each="comuna :${comunas}" th:value="${comuna.idComuna}" th:text="${comuna.regionComuna}"> -->
+<!-- 				</option> -->
+			</select>
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-lg-12 text-center">
+			<input type="reset" class="btn btn-secondary" value="Cancel">
+			<input type="button" class="btn btn-primary" value="Save Changes">
+		</div>
+	</div>
+</form>

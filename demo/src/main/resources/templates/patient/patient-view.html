@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Consulta medica</title>
+
+<!--JQUERY-->
+<script src="js/jquery.min.js"></script>
+
+<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Los iconos tipo Solid de Fontawesome-->
+<link rel="stylesheet" href="css/solid.css">
+<script src="js/all.js"></script>
+
+<!-- Nuestro css-->
+<link rel="stylesheet" type="text/css" href="css/patient-form.css"
+	th:href="@{/css/patient-form.css}">
+
+<!-- DATA TABLE -->
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap4.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/locales/bootstrap-datepicker.es.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+
+<script th:inline="javascript">
+    	
+    	var options = {
+    		/*<![CDATA[*/
+	    	    	[#th:block th:utext="${arrayComunas}" /] 
+    		/*]]>*/
+		}
+		
+		$(function(){
+			var fillSecondary = function(){
+				var selected = $('#region').val();
+				$('#comuna').empty();
+				options[selected].forEach(function(element,index){
+					$('#comuna').append('<option value="'+element.substr(0, element.indexOf('|'))+'">'+element.substr(element.indexOf("|") + 1)+'</option>');
+				});
+			}
+			$('#region').change(fillSecondary);
+			fillSecondary();
+		});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#datetimepicker").datepicker({
+		format: "dd/mm/yyyy",
+	    language: "es",
+	    autoclose: true,
+	    todayHighlight: true
+	});
+});
+</script>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="mx-auto col-sm-12 main-section" id="tab-patient"
+			role="tablist">
+			<ul class="nav nav-tabs">
+				<li class="nav-item"><a class="nav-link active" id="list-tab"
+					data-toggle="tab" href="#lista" role="tab" aria-controls="list"
+					aria-selected="false">Lista Pacientes</a></li>
+				<li class="nav-item"><a class="nav-link" id="form-tab"
+					data-toggle="tab" href="#ficha" role="tab" aria-controls="form"
+					aria-selected="true">Ficha</a></li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="lista" role="tabpanel"
+					aria-labelledby="list-tab">
+					<div class="card">
+						<div class="card-body">
+							<div th:include="patient/patient-list.html" th:remove="tag"></div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="ficha" role="tabpanel"
+					aria-labelledby="form-tab">
+					<div class="card">
+						<div class="card-header">
+							<h4>Ficha paciente</h4>
+						</div>
+						<div class="card-body">
+							<div th:include="patient/patient-form.html" th:remove="tag"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

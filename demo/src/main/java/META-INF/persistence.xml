@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="demo">
+		<class>com.max.spring.entity.Atencione</class>
+		<class>com.max.spring.entity.Comuna</class>
+		<class>com.max.spring.entity.Gasto</class>
+		<class>com.max.spring.entity.GastoPK</class>
+		<class>com.max.spring.entity.GastosDetalle</class>
+		<class>com.max.spring.entity.Ingreso</class>
+		<class>com.max.spring.entity.IngresosDetalle</class>
+		<class>com.max.spring.entity.IngresosDetallePK</class>
+		<class>com.max.spring.entity.Paciente</class>
+		<class>com.max.spring.entity.Regione</class>
+		<class>com.max.spring.entity.Atencion</class>
+		<class>com.max.spring.entity.GastoDetalle</class>
+		<class>com.max.spring.entity.GastoDetallePK</class>
+		<class>com.max.spring.entity.IngresoPK</class>
+		<class>com.max.spring.entity.IngresoDetalle</class>
+		<class>com.max.spring.entity.IngresoDetallePK</class>
+		<class>com.max.spring.entity.Region</class>
+		<class>com.max.spring.entity.Usuario</class>
+	</persistence-unit>
+</persistence>
