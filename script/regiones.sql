@@ -1,0 +1,15 @@
+insert into region values(01,'Tarapaca');
+insert into region values(02,'Antofagasta');
+insert into region values(03,'Atacama');
+insert into region values(04,'Coquimbo');
+insert into region values(05,'Valparaiso');
+insert into region values(06,'Libertador General Bernardo OHiggins');
+insert into region values(07,'Maule');
+insert into region values(08,'Biobio');
+insert into region values(09,'La Araucania');
+insert into region values(10,'Los Lagos');
+insert into region values(11,'Aysen del General Carlos Ibanez del Campo');
+insert into region values(12,'Magallanes y de la Antartica Chilena');
+insert into region values(13,'Metropolitana de Santiago');
+insert into region values(14,'Los Rios');
+insert into region values(15,'Arica y Parinacota');
